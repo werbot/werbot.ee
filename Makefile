@@ -3,7 +3,7 @@ ROOT_PATH:=$(abspath $(patsubst %/,%,$(dir $(abspath $(lastword ../$(MAKEFILE_LI
 GO_PATH:=$(shell go env GOPATH)
 CPU_ARCH:=$(shell go env GOARCH)
 OS_NAME:=$(shell go env GOHOSTOS)
-include $(ROOT_PATH)/.vscode/config/.env
+include $(ROOT_PATH)/configs/.env
 
 .DEFAULT_GOAL:=help
 
