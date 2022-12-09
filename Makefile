@@ -1,9 +1,10 @@
 SHELL:= /bin/bash
-ROOT_PATH:=$(abspath $(patsubst %/,%,$(dir $(abspath $(lastword ../$(MAKEFILE_LIST))))))
+ROOT_PATH:=$(abspath $(patsubst %/,%,$(dir $(abspath $(lastword ../../$(MAKEFILE_LIST))))))
 GO_PATH:=$(shell go env GOPATH)
 CPU_ARCH:=$(shell go env GOARCH)
 OS_NAME:=$(shell go env GOHOSTOS)
 include $(ROOT_PATH)/.env
+include $(ROOT_PATH)/add-on/ee/.env
 
 .DEFAULT_GOAL:=help
 
