@@ -26,8 +26,9 @@ components.
 
 Pages may import `@addon-kit` for navigation and host stores, and their own
 `@addon/ee/web/**` files. Vue, Vue Router, Pinia, Notiwind and `@vueuse/core`
-imports are forbidden and rejected by ESLint plus `scripts/check-no-vue.ts` in
-the `web` repository. Each page is loaded through a dynamic import, so it stays
+imports are forbidden and rejected by `scripts/check-no-vue.ts` in the `web`
+repository (run by `bun run lint`), which walks `web/` and every sibling
+`add-on/*/web` folder. ESLint covers the `web` package only. Each page is loaded through a dynamic import, so it stays
 a separate chunk. The host generator reads `../add-on` by default; see
 `web/README.md` for `ADDON_ROOTS` and `--roots`.
 
